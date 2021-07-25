@@ -2,7 +2,7 @@
   
 # 바이러스  
 https://www.acmicpc.net/problem/2606  
-yongckim❌  jongpar✅   jiwhwang❌  
+yongckim❌  jongpar✅   jiwhwang✅  
 
 # 수박수박수박수박
 https://programmers.co.kr/learn/courses/30/lessons/12922  
