@@ -1,6 +1,6 @@
 # ~ 8/4
 
-## 7569번 토마토  
+## 7569번 토마토 (BFS)    
 https://www.acmicpc.net/problem/7569  
 yongckim❌ jongpar❌ jiwhwang❌  
 
