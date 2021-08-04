@@ -1,4 +1,4 @@
-# ~ 8/4
+# ~ 8/6
 
 ## 7569번 토마토 (BFS)    
 https://www.acmicpc.net/problem/7569  
