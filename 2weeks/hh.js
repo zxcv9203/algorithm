@@ -9,9 +9,7 @@ function solution(n) {
     }
     if(n%2 === 1){
         answer += "수";
-    }else{
-        answer;
-    }   
+    }
     
     return answer;
 }

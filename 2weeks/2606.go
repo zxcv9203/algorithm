@@ -6,7 +6,6 @@ import (
 	"os"
 )
 
-var ans int
 var visit[] bool
 var network[][] bool
 type Queue struct {

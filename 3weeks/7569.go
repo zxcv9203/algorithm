@@ -69,15 +69,33 @@ func boxInput(box [][][]int, visit [][][]bool, q []Queue, io *bufio.Reader) ([][
 }
 
 func qEmpty(q []Queue) bool {
+	for i := 0; i < h; i++ {
+		if q[i].Empty() == false {
+			return false
+		}
+	}
+	return true
+}
 
+func qSize(q []Queue) int {
+	total := 0
+	for i := 0; i < h; i++ {
+		total += len(q[i].x)
+	}
+	return total
 }
 
 func bfs(q []Queue) {
 	ans := -1
-	for qEmpty(q) == false {
+	for qEmpty(q) == true {
+		size := qSize(q)
+		for i := 0; i < size; i++ {
+			for j := 0; j < 6; j++ {
 
+			}
+		}
 	}
-
+	fmt.Println(ans)
 }
 
 func main() {
