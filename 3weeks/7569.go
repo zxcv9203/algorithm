@@ -45,21 +45,18 @@ func (q *Queue) Size() int {
 	return len(q.x)
 }
 
-func boxInit() ([][][]int, [][][]bool) {
+func boxInit() [][][]int {
 	box := make([][][]int, h)
-	visit := make([][][]bool, h)
 	for i := 0; i < h; i++ {
 		box[i] = make([][]int, m)
-		visit[i] = make([][]bool, m)
 		for j := 0; j < m; j++ {
 			box[i][j] = make([]int, n)
-			visit[i][j] = make([]bool, n)
 		}
 	}
-	return box, visit
+	return box
 }
 
-func boxInput(box [][][]int, visit [][][]bool, q Queue, io *bufio.Reader) ([][][]int, [][][]bool, Queue) {
+func boxInput(box [][][]int, q Queue, io *bufio.Reader) ([][][]int, Queue) {
 	for i := 0; i < h; i++ {
 		for j := 0; j < m; j++ {
 			for k := 0; k < n; k++ {
@@ -67,13 +64,10 @@ func boxInput(box [][][]int, visit [][][]bool, q Queue, io *bufio.Reader) ([][][
 				if box[i][j][k] == 1 {
 					q.Set(j, k, i)
 				}
-				if box[i][j][k] == -1 {
-					visit[i][j][k] = true
-				}
 			}
 		}
 	}
-	return box, visit, q
+	return box, q
 }
 
 func safe(x, y, z int) bool {
@@ -93,7 +87,7 @@ func boxCheck(ans int, box [][][]int) int {
 	return ans
 }
 
-func bfs(q Queue, visit [][][]bool, box [][][]int) {
+func bfs(q Queue, box [][][]int) {
 	ans := -1
 	size := 0
 	for q.Empty() == false {
@@ -108,8 +102,7 @@ func bfs(q Queue, visit [][][]bool, box [][][]int) {
 				if safe(x, y, z) == false {
 					continue
 				}
-				if visit[z][x][y] == false && box[z][x][y] == 0 {
-					visit[z][x][y] = true
+				if box[z][x][y] == 0 {
 					box[z][x][y] = 1
 					q.Set(x, y, z)
 				}
@@ -123,8 +116,8 @@ func bfs(q Queue, visit [][][]bool, box [][][]int) {
 func main() {
 	io := bufio.NewReader(os.Stdin)
 	fmt.Fscan(io, &n, &m, &h)
-	box, visit := boxInit()
+	box := boxInit()
 	var q Queue
-	box, visit, q = boxInput(box, visit, q, io)
-	bfs(q, visit, box)
+	box, q = boxInput(box, q, io)
+	bfs(q, box)
 }
