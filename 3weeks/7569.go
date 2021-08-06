@@ -34,7 +34,7 @@ func (q *Queue) Get() (int, int, int) {
 }
 
 func (q *Queue) Empty() bool {
-	if len(q.x) == 0 && len(q.y) == 0 && len(q.z) == 0 {
+	if len(q.x) == 0 {
 		return true
 	} else {
 		return false
@@ -76,15 +76,15 @@ func boxInput(box [][][]int, visit [][][]bool, q Queue, io *bufio.Reader) ([][][
 	return box, visit, q
 }
 
-func safe(qx, qy, qz int) bool {
-	return qx >= 0 && qx < m && qy >= 0 && qy < n && qz >= 0 && qz < h
+func safe(x, y, z int) bool {
+	return x >= 0 && x < m && y >= 0 && y < n && z >= 0 && z < h
 }
 
-func visitCheck(ans int, visit [][][]bool) int {
+func boxCheck(ans int, box [][][]int) int {
 	for i := 0; i < h; i++ {
 		for j := 0; j < m; j++ {
 			for k := 0; k < n; k++ {
-				if visit[i][j][k] == false {
+				if box[i][j][k] == 0 {
 					return -1
 				}
 			}
@@ -102,22 +102,21 @@ func bfs(q Queue, visit [][][]bool, box [][][]int) {
 		for i := 0; i < size; i++ {
 			qx, qy, qz := q.Get()
 			for j := 0; j < 6; j++ {
-				qx += dx[j]
-				qy += dy[j]
-				qz += dz[j]
-				if safe(qx, qy, qz) == false {
+				x := qx + dx[j]
+				y := qy + dy[j]
+				z := qz + dz[j]
+				if safe(x, y, z) == false {
 					continue
 				}
-				fmt.Println(qz, qx, qy)
-				if visit[qz][qx][qy] == false && box[qz][qx][qy] == 0 {
-					visit[qz][qx][qy] = true
-					q.Set(qx, qy, qz)
+				if visit[z][x][y] == false && box[z][x][y] == 0 {
+					visit[z][x][y] = true
+					box[z][x][y] = 1
+					q.Set(x, y, z)
 				}
 			}
 		}
 	}
-	//ans = visitCheck(ans, visit)
-	fmt.Println(visit)
+	ans = boxCheck(ans, box)
 	fmt.Println(ans)
 }
 
