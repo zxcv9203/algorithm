@@ -99,10 +99,7 @@ func bfs(q Queue, box [][][]int) {
 				x := qx + dx[j]
 				y := qy + dy[j]
 				z := qz + dz[j]
-				if safe(x, y, z) == false {
-					continue
-				}
-				if box[z][x][y] == 0 {
+				if safe(x, y, z) && box[z][x][y] == 0 {
 					box[z][x][y] = 1
 					q.Set(x, y, z)
 				}
