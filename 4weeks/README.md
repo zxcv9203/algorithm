@@ -2,7 +2,7 @@
 
 ## 9184 신나는 함수 실행  
 https://www.acmicpc.net/problem/9184  
-yongckim❌  jongbpar❌ jiwhwang❌  
+yongckim❌  jongbpar❌ jiwhwang✅  
   
 ## 1932 정수삼각형  
 https://www.acmicpc.net/problem/1932  
