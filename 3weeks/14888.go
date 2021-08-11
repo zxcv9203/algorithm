@@ -14,6 +14,7 @@ type operator struct {
 }
 
 var op operator
+
 var n int
 var num []int
 var maxAns int = -1e9
