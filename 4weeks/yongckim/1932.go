@@ -42,5 +42,5 @@ func main() {
 	for i := 1; i <= n; i++ {
 		ans = max(ans, dp[n][i])
 	}
-	fmt.Println(ans)
+	fmt.Fprintln(w, ans)
 }
