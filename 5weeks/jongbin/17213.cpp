@@ -2,10 +2,6 @@
 
 using namespace std;
 
-//7H3 => 9C3
-//nHr => n+r-1Cr = n+r-1Cn-1
-//10H3 => 13-1C3 => 12C3 => 12C9
-//4H2 => 6-1C2 = 6-1C4-1 = 5C3
 
 int main(){
 
