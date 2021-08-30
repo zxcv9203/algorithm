@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"os"
 )
-
 type Queue struct {
 	x []int
 	y []int
