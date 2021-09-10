@@ -18,7 +18,7 @@ void init()
 	cout.tie(0);
 }
 
-int move_up(int copy[M][M])
+int move_down(int copy[M][M])
 {
 	int ret;
 
@@ -53,7 +53,7 @@ int move_up(int copy[M][M])
 	return ret;
 }
 
-int move_down(int copy[M][M])
+int move_up(int copy[M][M])
 {
 	int ret;
 
@@ -88,7 +88,7 @@ int move_down(int copy[M][M])
 	return ret;
 }
 
-int move_left(int copy[M][M])
+int move_right(int copy[M][M])
 {
 	int ret;
 	
@@ -123,7 +123,7 @@ int move_left(int copy[M][M])
 	return ret;
 }
 
-int move_right(int copy[M][M])
+int move_left(int copy[M][M])
 {
 	int ret;
 
