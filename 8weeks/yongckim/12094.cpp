@@ -29,7 +29,7 @@ int move_down(int copy[M][M])
 		int value;
 
 		idx = n;
-		value = -1;
+		value = 0;
 		for (int i = n - 1; i >= 0; i--)
 		{
 			if (copy[i][j] == 0)
@@ -37,7 +37,7 @@ int move_down(int copy[M][M])
 			if (copy[i][j] == value)
 			{
 				copy[idx][j] = copy[idx][j] * 2;
-				value = -1;
+				value = 0;
 			}
 			else
 			{
@@ -64,7 +64,7 @@ int move_up(int copy[M][M])
 		int value;
 
 		idx = -1;
-		value = -1;
+		value = 0;
 		for (int i = 0; i < n; i++)
 		{
 			if (copy[i][j] == 0)
@@ -72,7 +72,7 @@ int move_up(int copy[M][M])
 			if (copy[i][j] == value)
 			{
 				copy[idx][j] = copy[idx][j] * 2;
-				value = -1;
+				value = 0;
 			}
 			else
 			{
@@ -99,7 +99,7 @@ int move_right(int copy[M][M])
 		int value;
 
 		idx = n;
-		value = -1;
+		value = 0;
 		for (int j = n - 1; j >= 0; j--)
 		{
 			if (copy[i][j] == 0)
@@ -107,7 +107,7 @@ int move_right(int copy[M][M])
 			if (copy[i][j] == value)
 			{
 				copy[i][idx] = copy[i][idx] * 2;
-				value = -1;
+				value = 0;
 			}
 			else
 			{
@@ -134,7 +134,7 @@ int move_left(int copy[M][M])
 		int value;
 
 		idx = -1;
-		value = -1;
+		value = 0;
 		for (int j = 0; j < n; j++)
 		{
 			if (copy[i][j] == 0)
@@ -142,7 +142,7 @@ int move_left(int copy[M][M])
 			if (copy[i][j] == value)
 			{
 				copy[i][idx] = copy[i][idx] * 2;
-				value = -1;
+				value = 0;
 			}
 			else
 			{
