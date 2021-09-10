@@ -158,27 +158,6 @@ int move_right(int copy[M][M])
 	return ret;
 }
 
-bool equal_board(int board[M][M], int copy[M][M])
-{
-	for (int i = 0; i < n; i++)
-	{
-		for (int j = 0; j < n; j++)
-		{
-			if (board[i][j] != copy[i][j])
-				return false;
-		}
-	}
-	return true;
-}
-
-bool value_check(int ret, int move)
-{
-	ret = ret * pow(2, move);
-	if (ans >= ret)
-		return false;
-	return true;
-}
-
 void board_copy(int copy[M][M], int board[M][M])
 {
 	for (int i = 0; i < n; i++)
@@ -194,7 +173,7 @@ void dfs(int move, int board[M][M], int value)
 {
 	if (!move)
 	{
-		ans = value;
+		ans = max(ans, value);
 		return;
 	}
 	for (int i = 0; i < 4; i++)
@@ -211,10 +190,7 @@ void dfs(int move, int board[M][M], int value)
 			ret = move_left(copy);
 		else if (i == 3)
 			ret = move_right(copy);
-		if (equal_board(board, copy))
-			continue ;
-		if (value_check(ret, move - 1))
-			dfs(move - 1, copy, ret);
+		dfs(move - 1, copy, ret);
 	}
 }
 
@@ -227,11 +203,8 @@ int main(void)
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < n; j++)
-		{
 			cin >> board[i][j];
-			ans = max(ans, board[i][j]);
-		}
 	}
-	dfs(10, board, ans);
+	dfs(5, board, ans);
 	cout << ans << '\n';
 }
