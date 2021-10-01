@@ -1,4 +1,4 @@
-# 그리디 ver2 ( 2021.10.8 2:00pm )
+# 그리디 ver2 ( 2021.10.7 2:00pm )
 ## S2
 https://www.acmicpc.net/problem/2785  
 ## S1
