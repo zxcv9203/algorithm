@@ -4,5 +4,5 @@ https://www.acmicpc.net/problem/17413
 # 팰린드롬 만들기 (실버 1)
 https://www.acmicpc.net/problem/1254
 
-# 생태학
+# 생태학 (골드 5)
 https://www.acmicpc.net/problem/4358
