@@ -58,9 +58,9 @@ def dfs(cnt):
 			rotation[i][1] = tmp_rotation[i][1]
 			rotation[i][2] = tmp_rotation[i][2]
 		return
-	change = diff / 4
-	if change % 4 != 0:
-		change += 1
+	change = diff / 4 + 1
+	#if change % 4 != 0:
+	#	change += 1
 	prediction = cnt + change
 	if prediction > ans_cnt:
 		return
