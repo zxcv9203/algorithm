@@ -23,29 +23,19 @@ def lubic_check():
 def rotate_lubic(line, idx, rotate, status):
 	rotate_arr = [0, 0, 0, 0]
 	if line == 1:
-		if status == True:
-			for i in range(4):
-				rotate_arr[(i + rotate) % 4] = lubic[idx][i]
-			for i in range(4):
-				lubic[idx][i] = rotate_arr[i]
-		else:
+		if status == False:
 			rotate = 4 - rotate
-			for i in range(4):
-				rotate_arr[(i + rotate) % 4] = lubic[idx][i]
-			for i in range(4):
-				lubic[idx][i] = rotate_arr[i]
+		for i in range(4):
+			rotate_arr[(i + rotate) % 4] = lubic[idx][i]
+		for i in range(4):
+			lubic[idx][i] = rotate_arr[i]
 	else:
-		if status == True:
-			for i in range(4):
-				rotate_arr[(i + rotate) % 4] = lubic[i][idx]
-			for i in range(4):
-				lubic[i][idx] = rotate_arr[i]
-		else:
+		if status == False:
 			rotate = 4 - rotate
-			for i in range(4):
-				rotate_arr[(i + rotate) % 4] = lubic[i][idx]
-			for i in range(4):
-				lubic[i][idx] = rotate_arr[i]
+		for i in range(4):
+			rotate_arr[(i + rotate) % 4] = lubic[i][idx]
+		for i in range(4):
+			lubic[i][idx] = rotate_arr[i]
 				
 
 def dfs(cnt):
