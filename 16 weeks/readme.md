@@ -14,4 +14,4 @@
 
 
 번외
-[S1] 봄버맨 ❎ https://www.acmicpc.net/problem/2549
+[S1] 봄버맨 🆗 https://www.acmicpc.net/problem/16918
