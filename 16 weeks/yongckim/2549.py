@@ -1,7 +1,7 @@
 import sys
 input = sys.stdin.readline
 
-CONST_M = 10
+CONST_M = 8
 lubic = [list(map(int,input().split())) for _ in range(4)]
 ans = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 16]]
 ans_cnt = 8
@@ -49,9 +49,9 @@ def rotate_lubic(line, idx, rotate, status):
 				
 
 def dfs(cnt):
+	global ans_cnt
 	diff = lubic_check()
-	if diff == 0:
-		global ans_cnt
+	if diff == 0 and cnt < ans_cnt:
 		ans_cnt = cnt
 		for i in range(cnt):
 			rotation[i][0] = tmp_rotation[i][0]
@@ -62,7 +62,7 @@ def dfs(cnt):
 	if change % 4 != 0:
 		change += 1
 	prediction = cnt + change
-	if prediction >= ans_cnt:
+	if prediction > ans_cnt:
 		return
 	for l in range(1, 3):
 		for x in range(4):
