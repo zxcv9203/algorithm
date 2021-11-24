@@ -2,7 +2,7 @@
 
 1. [S3] n과 m(2) 🅾️ https://www.acmicpc.net/problem/15650
 2. [S3] n과 m(3) 🅾️ https://www.acmicpc.net/problem/15651
-3. [S3] n과 m(7) 
+3. [S3] n과 m(7) 3
 4. [G5] 암호 만들기 ❌ 
 5. [G5] 미친 로봇 ❌ 2 https://www.acmicpc.net/problem/1405
 6. [G5] N-Queen ❌ 1
