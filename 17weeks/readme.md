@@ -7,5 +7,5 @@ jiwhwang
 6. [G2] 2048-Easy 
 
 yongckim
-1. [P5] Boggle 
+1. [P5] Boggle ✔️
 
